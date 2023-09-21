@@ -1,8 +1,9 @@
 ﻿namespace Game.Interface;
+
 /// <summary>
-/// Интерфейс для войнов
+/// Интерфейс пехотинца
 /// </summary>
-public interface IWarrior
+public interface IInfantryman
 {
     /// <summary>
     /// Информация

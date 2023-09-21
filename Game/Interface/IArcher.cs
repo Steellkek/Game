@@ -1,8 +1,8 @@
 ﻿namespace Game.Interface;
 /// <summary>
-/// Интерфейс для войнов
+/// интерфейс лучника
 /// </summary>
-public interface IWarrior
+public interface IArcher
 {
     /// <summary>
     /// Информация
