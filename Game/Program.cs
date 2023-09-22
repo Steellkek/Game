@@ -1,29 +1,14 @@
-﻿using Game.Enum;
-using Game.Fabric;
-using Game.Interface;
+﻿using Game.Interface;
+using Game.Interface.Russia;
 
+var romeFabric = new RomeArmyFabric();
+var russiaFabric = new RussiaArmyFabric();
+var japanFabric = new JapanArmyFabric();
 
-var fabric = new WarriorFabric();
+var romeArmy = new Army(romeFabric);
+var russiaArmy = new Army(russiaFabric);
+var japanArmy = new Army(japanFabric);
 
-List<WarriorEnum> warriorEnums = Enum.GetValues(typeof(WarriorEnum))
-    .Cast<WarriorEnum>()
-    .ToList();
-
-List<IWarrior> warriors = new List<IWarrior>();
-
-foreach (var warriorEnum in warriorEnums)
-{
-    try
-    {
-        warriors.Add(fabric.CreateWarrior(warriorEnum));
-    }
-    catch
-    {
-        
-    }
-}
-
-foreach (var warrior in warriors)
-{
-    warrior.Info();
-}
+romeArmy.GetInfo();
+russiaArmy.GetInfo();
+japanArmy.GetInfo();
