@@ -1,12 +1,38 @@
-﻿namespace Game.Interface;
+﻿using Game.Enum;
+
+namespace Game.Interface;
 
 /// <summary>
 /// Интерфейс для фабрики армии
 /// </summary>
-public interface IArmyFabric
+public abstract class IArmyFabric
 {
-    IArcher GetArcher();
-    IHorseman GetHorseman();
-    IInfantryman GetInfantryman();
-    IWarrior GetWarrior();
+    /// <summary>
+    /// Страна
+    /// </summary>
+    public abstract CountryEnum CountryEnum { get; set; }
+
+    /// <summary>
+    /// Получить лучника
+    /// </summary>
+    /// <returns></returns>
+    public abstract IArcher GetArcher();
+
+    /// <summary>
+    /// Получить всадника
+    /// </summary>
+    /// <returns></returns>
+    public abstract IHorseman GetHorseman();
+
+    /// <summary>
+    /// Получить пехотинца
+    /// </summary>
+    /// <returns></returns>
+    public abstract IInfantryman GetInfantryman();
+
+    /// <summary>
+    /// Получить война
+    /// </summary>
+    /// <returns></returns>
+    public abstract IWarrior GetWarrior();
 }
