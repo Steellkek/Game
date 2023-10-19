@@ -7,50 +7,58 @@ public class Army
     /// <summary>
     /// Лучники
     /// </summary>
-    public List<IArcher> Archers = new();
+    public List<Archer> Archers { get; set; } = new();
+    
     /// <summary>
     /// Войны
     /// </summary>
-    public List<IWarrior> Warriors = new();
+    public List<Warrior> Warriors { get; set; } = new();
+    
     /// <summary>
     /// Всадники
     /// </summary>
-    public List<IHorseman> Horsemens = new();
+    public List<Horseman> Horsemens { get; set; } = new();
+    
     /// <summary>
     /// Пехотинцы
     /// </summary>
-    public List<IInfantryman> Infantrymens = new();
+    public List<Infantryman> Infantrymens { get; set; } = new();
+     
+    /// <summary>
+    /// Медведи
+    /// </summary>
+    public List<Bear> Bears { get; set; } = new();
+    
+    /// <summary>
+    /// Самураи
+    /// </summary>
+    public List<Samurai> Samurais { get; set; } = new();
+    
+    /// <summary>
+    /// Легионеры
+    /// </summary>
+    public List<Legionnair> Legionnairs { get; set; } = new();
+
     /// <summary>
     /// Страна
     /// </summary>
-    public  CountryEnum CountryEnum { get; set; }
+    public  CountryEnum Country { get; set; } 
 
-    /// <summary>
-    /// Конструктор через фабрику
-    /// </summary>
-    /// <param name="armyFabric"></param>
-    public Army(IArmyFabric armyFabric)
-    {
-        CountryEnum = armyFabric.CountryEnum;
-        
-        Archers.Add(armyFabric.GetArcher());
-        
-        Warriors.Add(armyFabric.GetWarrior());
-        
-        Horsemens.Add(armyFabric.GetHorseman());
-        
-        Infantrymens.Add(armyFabric.GetInfantryman());
-    }
+
     /// <summary>
     /// Информация о Армии
     /// </summary>
     public void GetInfo()
     {
-        Console.WriteLine($"{CountryEnum} army:");
-
-       Archers.ForEach(x=> x.Info());
-       Warriors.ForEach(x=> x.Info());
-       Horsemens.ForEach(x=> x.Info());
-       Infantrymens.ForEach(x=> x.Info());
+        Console.WriteLine($"{Country} army:");
+        
+        Archers.ForEach(x=> x.Info());
+        Warriors.ForEach(x=> x.Info());
+        Horsemens.ForEach(x=> x.Info());
+        Infantrymens.ForEach(x=> x.Info());
+        Bears.ForEach(x => x.Info());
+        Samurais.ForEach(x => x.Info());
+        Legionnairs.ForEach(x => x.Info());
+        Console.WriteLine();
     }
 }

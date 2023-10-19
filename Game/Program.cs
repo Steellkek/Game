@@ -1,14 +1,15 @@
-﻿using Game.Interface;
-using Game.Interface.Russia;
+﻿using Game.Director;
+using Game.Interface;
 
-var romeFabric = new RomeArmyFabric();
-var russiaFabric = new RussiaArmyFabric();
-var japanFabric = new JapanArmyFabric();
+Director dir = new Director();
+JapanArmyBuilder japanArmyBuilder = new JapanArmyBuilder();
+RussiaArmyBuilder russiaArmyBuilder = new RussiaArmyBuilder();
+RomeArmyBuilder romeArmyBuilder = new RomeArmyBuilder();
 
-var romeArmy = new Army(romeFabric);
-var russiaArmy = new Army(russiaFabric);
-var japanArmy = new Army(japanFabric);
+var japanArmy = dir.CreateArmy(japanArmyBuilder);
+var russiaArmy = dir.CreateArmy(russiaArmyBuilder);
+var romeArmy = dir.CreateArmy(romeArmyBuilder);
 
-romeArmy.GetInfo();
-russiaArmy.GetInfo();
 japanArmy.GetInfo();
+russiaArmy.GetInfo();
+romeArmy.GetInfo();
