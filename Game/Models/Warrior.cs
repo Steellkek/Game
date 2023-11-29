@@ -2,7 +2,12 @@
 
 public class Warrior : IWarrior
 {
-    public void Info()
+    public Warrior()
+    {
+        attack = 1;
+    }
+    
+    public override void Info()
     {
         Console.WriteLine(nameof(Warrior));
     }

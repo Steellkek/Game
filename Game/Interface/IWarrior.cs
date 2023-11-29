@@ -1,11 +1,14 @@
 ﻿namespace Game.Interface;
+
 /// <summary>
 /// Интерфейс для войнов
 /// </summary>
-public interface IWarrior
+public abstract class IWarrior
 {
+    public int attack;
+
     /// <summary>
     /// Информация
     /// </summary>
-    void Info();
+    public abstract void Info();
 }

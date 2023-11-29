@@ -1,5 +1,5 @@
-﻿using Game.Director;
-using Game.Interface;
+﻿using Game.Countries;
+using Program.Game;
 
 namespace Program
 {
@@ -7,18 +7,11 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            Director dir = new Director();
-            JapanArmyBuilder japanArmyBuilder = new JapanArmyBuilder();
-            RussiaArmyBuilder russiaArmyBuilder = new RussiaArmyBuilder();
-            RomeArmyBuilder romeArmyBuilder = new RomeArmyBuilder();
+            GameDirector.StartGame();
 
-            var japanArmy = dir.CreateArmy(japanArmyBuilder);
-            var russiaArmy = dir.CreateArmy(russiaArmyBuilder);
-            var romeArmy = dir.CreateArmy(romeArmyBuilder);
-
-            japanArmy.GetInfo();
-            russiaArmy.GetInfo();
-            romeArmy.GetInfo();
+            GameDirector.MainGame();
+            
+            GameDirector.EndGame();
         }
     }
 }

@@ -4,7 +4,12 @@
 /// </summary>
 public class Infantryman : IWarrior
 {
-    public void Info()
+    public Infantryman()
+    {
+        attack = 1;
+    }
+    
+    public override void Info()
     {
         Console.WriteLine(nameof(Infantryman));
     }

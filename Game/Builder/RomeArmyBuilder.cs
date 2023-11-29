@@ -15,26 +15,26 @@ public class RomeArmyBuilder : BaseArmyBuilder
 
     public override void BuildArcher()
     {
-        Army.Archers.Add(new Archer());
+        Army.warriors.Add(new Archer());
     }
 
     public override void BuildLegionnair()
     {
-        Army.Legionnairs.Add(new Legionnair());
+        Army.warriors.Add(new Legionnair());
     }
 
     public override void BuildHorseman()
     {
-        Army.Horsemens.Add(new Horseman());
+        Army.warriors.Add(new Horseman());
     }
 
     public override void BuildInfantryman()
     {
-        Army.Infantrymens.Add(new Infantryman());
+        Army.warriors.Add(new Infantryman());
     }
 
     public override void BuildWarrior()
     {
-        Army.Warriors.Add(new Warrior());
+        Army.warriors.Add(new Warrior());
     }
 }

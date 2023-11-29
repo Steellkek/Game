@@ -1,21 +1,20 @@
 ﻿using Game.Enum;
 using Game.Interface;
-using Game.Interface.Russia;
 
 namespace Game.Fabric;
 
-public class FabricArmyFabric
+public class FabricBuilder
 {
-    public static IArmyFabric getArmyFabric(CountryEnum countryEnum)
+    public static BaseArmyBuilder GetBuilder(CountryEnum countryEnum)
     {
         switch (countryEnum)
         {
             case CountryEnum.Russia:
-                return new RussiaArmyFabric();
+                return new RussiaArmyBuilder();
             case CountryEnum.Rome:
-                return new RomeArmyFabric();
+                return new RomeArmyBuilder();
             case CountryEnum.Japan:
-                return new JapanArmyFabric();
+                return new JapanArmyBuilder();
             default:
                 throw new Exception("Такого класса нет");
         }

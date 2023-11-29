@@ -4,7 +4,7 @@ namespace Game.Director;
 /// <summary>
 /// Класс-распорядитель
 /// </summary>
-public class Director
+public class DirectorArmy
 {
     public Army CreateArmy(BaseArmyBuilder armyBuilder)
     {

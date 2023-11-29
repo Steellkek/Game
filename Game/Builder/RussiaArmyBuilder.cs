@@ -15,26 +15,26 @@ public class RussiaArmyBuilder : BaseArmyBuilder
 
     public override void BuildArcher()
     {
-        Army.Archers.Add(new Archer());
+        Army.warriors.Add(new Archer());
     }
 
     public override void BuildBear()
     {
-        Army.Bears.Add(new Bear());
+        Army.warriors.Add(new Bear());
     }
 
     public override void BuildHorseman()
     {
-        Army.Horsemens.Add(new Horseman());
+        Army.warriors.Add(new Horseman());
     }
 
     public override void BuildInfantryman()
     {
-        Army.Infantrymens.Add(new Infantryman());
+        Army.warriors.Add(new Infantryman());
     }
 
     public override void BuildWarrior()
     {
-        Army.Warriors.Add(new Warrior());
+        Army.warriors.Add(new Warrior());
     }
 }
