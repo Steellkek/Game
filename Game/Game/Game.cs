@@ -3,12 +3,29 @@ using Game.Director;
 using Game.Enum;
 using Game.Fabric;
 using Game.Interface;
+using Program;
 
-namespace Program.Game;
+namespace Game.Game;
 
 public class GameDirector
 {
-    public static void StartGame()
+    private static GameDirector _instance;
+
+    private GameDirector()
+    {
+        
+    }
+
+    public static GameDirector GetInstance()
+    {
+        if (_instance==null)
+        {
+            _instance = new GameDirector();
+        }
+
+        return _instance;
+    }
+    public void StartGame()
     {
         var countris = Utils.GetEnumList<CountryEnum>();
         Console.WriteLine("Выберите страну! Введите номер страны.");
@@ -43,7 +60,7 @@ public class GameDirector
         secondCountry._army.GetInfo();
     }
 
-    public static void MainGame()
+    public void MainGame()
     {
         FirstCountry firstCountry = FirstCountry.getInstance();
         SecondCountry secondCountry = SecondCountry.getInstance();
@@ -82,7 +99,7 @@ public class GameDirector
         }
     }
 
-    public static void EndGame()
+    public void EndGame()
     {
         if (FirstCountry._hpFirstCountry > 0)
         {

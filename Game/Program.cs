@@ -1,5 +1,4 @@
-﻿using Game.Countries;
-using Program.Game;
+﻿using Game.Game;
 
 namespace Program
 {
@@ -7,11 +6,10 @@ namespace Program
     {
         static void Main(string[] args)
         {
-            GameDirector.StartGame();
-
-            GameDirector.MainGame();
-            
-            GameDirector.EndGame();
+            var game = GameDirector.GetInstance();
+            game.StartGame();
+            game.MainGame();
+            game.EndGame();
         }
     }
 }
